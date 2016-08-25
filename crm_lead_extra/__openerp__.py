@@ -32,7 +32,7 @@
     "installable": True,
     "auto_install": False,
     "depends": [
-        "crm_lead",
+        "crm",
     ],
     "data": [
         "crm_lead_extra_view.xml",
