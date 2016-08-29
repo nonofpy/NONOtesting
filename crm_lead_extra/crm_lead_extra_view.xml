@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <openerp>
     <data>
-        <record id="crm_lead_extra_view_tree" model="ir.iu.view">
-            <field name="name">crm.lead.extra.view.tree</field>
+        <record id="crm_lead_extra_view" model="ir.iu.view">
+            <field name="name">crm.lead.extra.view</field>
             <field name="model">crm.lead</field>
-           <field name="inherit_id" ref="crm_lead_view"/>
+           <field name="inherit_id" ref="crm.crm_lead_view"/>
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='probability']" position="after">
                     <field name="amount"/>
