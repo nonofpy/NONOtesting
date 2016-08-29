@@ -25,6 +25,6 @@ class crm_lead_extra(osv.osv):
 
     _inherit = 'crm.lead'
 
-    _column = {
+    _columns = {
     'amount': fields.float('Done rate (%)',)
     }
