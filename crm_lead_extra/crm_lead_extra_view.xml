@@ -6,8 +6,10 @@
             <field name="model">crm.lead</field>
            <field name="inherit_id" ref="crm.crm_case_form_view_leads"/>
             <field name="arch" type="xml">
-                <xpath expr="//field[@name='probability']" position="after">
-                  <field name="amount_id"/>
+                <xpath expr="//field[@name='probability'%]" position="after">
+                    <label>
+                    <field name="amount_id"/>
+                    </label>
                 </xpath>
             </field>
         </record>

@@ -28,9 +28,9 @@
     "website": "https://www.odoo.com/page/crm",
     "author": "Rooms For (Hong Kong) Limited NONO",
     "license": "AGPL-3",
-    "application": False,
+    "application": True,
     "installable": True,
-    "auto_install": False,
+    "auto_install": True,
     "depends": [
         "crm",
     ],

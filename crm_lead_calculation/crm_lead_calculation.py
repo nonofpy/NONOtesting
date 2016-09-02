@@ -23,12 +23,10 @@ from openerp.osv import fields, osv
 
 
 class crm_lead_calculation(osv.osv):
-
     _inherit = 'crm.lead'
 
-    _columns = {'estimated_revenue': fields.function(_amount_all,type='float',group_operator="multiply",method=True,digits=(16,2),string='Estimated Revenue',)}
 
-    def _amount_all(self, cr, uid, ids, field_name, arg, context=None):
+    def _amount_total(self, cr, uid, ids, field_name, arg, context=None):
         """ Calculates Estimated Revennue.
         @param self: The object pointer
         @param cr: The current row, from the database cursor,
@@ -41,11 +39,16 @@ class crm_lead_calculation(osv.osv):
         """
         res = {}
         for record in self.browse(cr, uid, ids, context=context):
-            res[reorder.id] = {
+            res[record.id] = {
                 'planned_revenue': 0.0,
-                'probability': 0.0,
+                'lead.probability': 0.0,
             }
-            res[record.id]= [record.id]['planned_revenue'] * [record.id]['probability']
+            res[record.id]= record.planned_revenue * record.probability / 100
         return res
+
+
+    _columns = {'estimated_revenue': fields.function(_amount_total,string='Estimated Revenue')
+                }
+
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

@@ -25,6 +25,7 @@ class crm_lead_extra(osv.osv):
 
     _inherit = 'crm.lead'
 
-    _columns = {
-    'amount': fields.float('Done rate (%)',)
-    }
+    _columns = {'amount_id': fields.float('Done rate (%)',)
+               }
+
+# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
