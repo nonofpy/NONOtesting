@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data noupdate="1">
+
+    <record id="crm_adjust_all_lead" model="ir.rule">
+        <field name="name">Adjust See All Leads</field>
+        <field name="model_id">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_rule_all_lead"/>
+        <field name="arch" type="xml">
+        <xpath expr="//filed[@eval=[(4, ref('base.group_sale_salesman_all_leads'))]" position="replace">
+        <field eval="[(4, ref('base.group_partner_manager'))]"/>
+        </xpath>
+        </field>
+    </record>
+</data>
+</openerp>
